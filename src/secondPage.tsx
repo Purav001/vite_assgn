@@ -25,12 +25,20 @@ const columns: GridColDef[] = [
 
 const departments: Department[] = [
 {
-    name: 'Department 1',
-    subDepartments: ['Sub Department 1-1', 'Sub Department 1-2']
+    name: 'Customer Service',
+    subDepartments: ['Support', 'Customer Success']
 },
 {
-    name: 'Department 2',
-    subDepartments: ['Sub Department 2-1', 'Sub Department 2-2']
+    name: 'Design',
+    subDepartments: ['Graphic Design', 'Graphic Design', 'product Design']
+},
+{
+    name: 'Agriculture & Fishing',
+    subDepartments: ['Agriculture', 'Crops', 'Farming Animals & Livestock', 'Fishery & Aquaculture', 'Ranching']
+},
+{
+    name: 'Business Services',
+    subDepartments: ['Accounting & Accounting Services', 'Auctions', 'Business Services- General', 'Career Planning', 'Career']
 }
 ];
 
@@ -63,7 +71,7 @@ const handleSelect = (department: string, isSubDepartment: boolean = false) => {
 };
 
 return (
-    <List className='dcr'>
+    <List>
     {departments.map((department) => (
         <React.Fragment key={department.name}>
         <ListItem button onClick={() => handleToggle(department.name)}>
@@ -128,7 +136,7 @@ useEffect(() => {
 
 return (
     <Container className='text-center'>
-    <h1 style={{textAlign: 'center',color: '#fffce1'}}>Second Page</h1>
+    <h1 style={{textAlign: 'center'}}>Second Page</h1>
     <div  style={{ height: 400, width: '100%'}}>
         <DataGrid
         rows={data}
@@ -138,10 +146,20 @@ return (
             (model) => setPaginationModel(model)
         }
         loading={loading}
-        className='dcr'
+        sx={{
+            '& .MuiDataGrid-cell': {
+                borderColor: '#0e100f',
+            },
+            '& .MuiDataGrid-columnHeaders': {
+                borderColor: '#0e100f',
+            },
+            '& .MuiDataGrid-footerContainer': {
+                borderTop: '1px solid #0e100f',
+            },
+        }}
         />
     </div>
-    <h1 style={{textAlign: 'center',color: '#fffce1'}}>Departments</h1>
+    <h1 style={{textAlign: 'center'}}>Departments</h1>
     <DepartmentList />
     </Container>
 );

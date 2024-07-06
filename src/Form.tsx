@@ -36,7 +36,7 @@ const handleSubmit = () => {
 };
 
 return (
-    <Container maxWidth="sm" style={{textAlign: 'center' , color: '#fffce1'}}>
+    <Container maxWidth="sm" style={{textAlign: 'center'}}>
     <Typography variant="h3" component="h1" gutterBottom>
         User Information
     </Typography>
@@ -47,7 +47,6 @@ return (
         value={name}
         onChange={(e) => setName(e.target.value)}
         margin="normal"
-        className='dcr'
     />
     <TextField
         fullWidth
@@ -55,7 +54,6 @@ return (
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         margin="normal"
-        className='dcr'
     />
     <TextField
         fullWidth
@@ -63,7 +61,6 @@ return (
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         margin="normal"
-        className='dcr'
     />
     <Button variant="contained" color="primary" onClick={handleSubmit} endIcon={<SubmitIcon />}>
         Submit
