@@ -63,7 +63,7 @@ const handleSelect = (department: string, isSubDepartment: boolean = false) => {
 };
 
 return (
-    <List>
+    <List className='dcr'>
     {departments.map((department) => (
         <React.Fragment key={department.name}>
         <ListItem button onClick={() => handleToggle(department.name)}>
@@ -128,8 +128,8 @@ useEffect(() => {
 
 return (
     <Container className='text-center'>
-    <h1 style={{textAlign: 'center'}}>Second Page</h1>
-    <div style={{ height: 400, width: '100%' }}>
+    <h1 style={{textAlign: 'center',color: '#fffce1'}}>Second Page</h1>
+    <div  style={{ height: 400, width: '100%'}}>
         <DataGrid
         rows={data}
         columns={columns}
@@ -138,9 +138,10 @@ return (
             (model) => setPaginationModel(model)
         }
         loading={loading}
+        className='dcr'
         />
     </div>
-    <h1 style={{textAlign: 'center'}}>Departments</h1>
+    <h1 style={{textAlign: 'center',color: '#fffce1'}}>Departments</h1>
     <DepartmentList />
     </Container>
 );

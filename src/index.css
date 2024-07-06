@@ -68,3 +68,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.dcr{
+  background-color: #fffce1;
+  border: 1px solid #0e100f;
+  color: #0e100f;
+  border-radius: 10px;
+}
+.brd{
+  border: 1px solid #fffce1;
+}
+.bdr{
+  border: 1px solid #0e100f;
+}
