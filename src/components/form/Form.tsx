@@ -17,7 +17,7 @@ const location = useLocation();
 useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get('error')) {
-    setError('You must enter your details before accessing the second page.');
+    setError('error.');
     }
 }, [location]);
 
@@ -29,6 +29,7 @@ const handleSubmit = () => {
     }
     const userDetails = { name, phone, email };
     localStorage.setItem('userDetails', JSON.stringify(userDetails));
+    setShowError(false);
     setShowSuccess(true);
     setTimeout(() => {
         navigate('/second-page');
@@ -66,7 +67,7 @@ return (
         Submit
     </Button>
     {showError && (
-        <Alert severity="error">Enter your detail before accessing the page.</Alert>
+        <Alert severity="error">You must enter your details before accessing the second page.</Alert>
     )}
     {showSuccess && (
         <Alert severity="success">Data submitted successfully.</Alert>
